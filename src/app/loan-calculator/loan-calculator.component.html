@@ -57,9 +57,6 @@
         <strong>Cambio de divisas</strong>
       </div>
     </div>
-    <div class="calculate-loan" (click)="showModal = true">
-      ¿Quieres saber cómo pagar tu préstamo más rápido?👌
-    </div>
 
     @if (amortizationTable.length > 0) {
     <button (click)="showAmortizationTable()" class="button-1">
@@ -80,6 +77,10 @@
   <app-modal-comming-soon (closeModal)="closeModalPress()">
   </app-modal-comming-soon>
   }
+
+  <div class="promo" (click)="showModal = true">
+    ¿Quieres saber cómo pagar tu préstamo más rápido?👌
+  </div>
 
   <footer>
     <div class="powered-by">powered by</div>
