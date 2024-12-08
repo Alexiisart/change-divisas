@@ -201,6 +201,29 @@ td {
   z-index: 1000;
 }
 
+.cuota {
+  display: inline-block;
+  font-size: 50px;
+  font-weight: bold;
+  color: #afc5d1;
+  border: 1px solid #629baa;
+  padding: 0.5rem 2rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #629baa;
+  margin-bottom: 1rem;
+}
+
+.enfasis {
+  color: #afc5d1;
+}
+
 @media (max-width: 600px) {
   .app-container {
     gap: 0 !important;
@@ -215,5 +238,12 @@ td {
 
   .converter-container {
     padding: 1rem 0.5rem !important;
+  }
+  .cuota {
+    font-size: 30px;
+  }
+
+  .result {
+    font-size: 14px;
   }
 }

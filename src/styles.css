@@ -20,6 +20,7 @@ body {
   border: none;
   border-radius: 6px;
   margin-bottom: 0.75rem;
+  outline: none;
   cursor: pointer;
   transition: 0.2s ease-in-out all;
 }
@@ -38,6 +39,7 @@ body {
   color: #afc5d1;
   border-radius: 6px;
   margin-bottom: 1rem;
+  outline: none;
   cursor: pointer;
   transition: 0.2s ease-in-out all;
 }

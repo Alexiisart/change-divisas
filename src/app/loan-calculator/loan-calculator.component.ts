@@ -39,6 +39,7 @@ export class LoanCalculatorComponent {
   amortizationTable: AmortizationRow[] = [];
   isModalVisible = false;
   showModal = false;
+  cuota: number = 0;
 
   calculate() {
     const monthlyRate = parseFloat(this.annualRate) / 12 / 100;
@@ -50,6 +51,7 @@ export class LoanCalculatorComponent {
     );
 
     this.generateAmortizationTable(monthlyPayment, monthlyRate);
+    this.cuota = monthlyPayment;
   }
 
   calculateMonthlyPayment(
@@ -87,6 +89,7 @@ export class LoanCalculatorComponent {
     this.years = '';
     this.annualRate = '';
     this.amortizationTable = [];
+    this.cuota = 0;
   }
 
   // Configuración de la fecha y logo
@@ -225,4 +228,3 @@ export class LoanCalculatorComponent {
     this.showModal = false;
   }
 }
-

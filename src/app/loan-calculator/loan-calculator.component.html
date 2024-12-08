@@ -12,6 +12,7 @@
       <h1>Calculadora de Préstamos</h1>
     </div>
 
+    @if (!cuota) {
     <div class="input-wrapper">
       <span class="input-icon">$</span>
       <input
@@ -57,10 +58,21 @@
         <strong>Cambio de divisas</strong>
       </div>
     </div>
-
-    @if (amortizationTable.length > 0) {
+    } @if (cuota > 0) {
+    <div class="result">
+      La cuota mensual sería de:
+      <div class="cuota">${{ cuota | number : "1.2-2" }}</div>
+      <div class="data-extra">
+        Considerando un monto de
+        <span class="enfasis"> ${{ amount | number : "1.2-2" }}</span> a una
+        tasa de interés de <span class="enfasis">{{ annualRate }}%</span> por un
+        plazo de <span class="enfasis">{{ years }}</span> años
+      </div>
+    </div>
+    <button (click)="clear()" class="button-2">Limpiar</button>
+    } @if (amortizationTable.length > 0) {
     <button (click)="showAmortizationTable()" class="button-1">
-      Ver tabla de amortización
+      Ver tu préstamo en detalle
     </button>
     } @if (isModalVisible) {
     <div class="amortización">
