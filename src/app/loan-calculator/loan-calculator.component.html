@@ -63,13 +63,15 @@
       Ver tabla de amortización
     </button>
     } @if (isModalVisible) {
-    <app-amortization-table-modal
-      [amortizationTable]="amortizationTable"
-      (closeModal)="closeModal()"
-      (downloadPDF)="downloadPDF()"
-      (downloadExcel)="downloadExcel()"
-    >
-    </app-amortization-table-modal>
+    <div class="amortización">
+      <app-amortization-table-modal
+        [amortizationTable]="amortizationTable"
+        (closeModal)="closeModal()"
+        (downloadPDF)="downloadPDF()"
+        (downloadExcel)="downloadExcel()"
+      >
+      </app-amortization-table-modal>
+    </div>
     }
   </div>
 
@@ -78,9 +80,9 @@
   </app-modal-comming-soon>
   }
 
-  <div class="promo" (click)="showModal = true">
+  <a class="promo" (click)="showModal = true">
     ¿Quieres saber cómo pagar tu préstamo más rápido?👌
-  </div>
+  </a>
 
   <footer>
     <div class="powered-by">powered by</div>

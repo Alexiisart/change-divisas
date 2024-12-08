@@ -1,5 +1,4 @@
 .converter-container {
-  background-color: #0e262d;
   min-height: 100vh;
   color: #afc5d1;
   padding: 2rem 1.5rem;
@@ -45,6 +44,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .input-group {
@@ -180,6 +180,25 @@ td {
 
 .close-button:hover {
   color: white;
+}
+
+.promo {
+  display: flex;
+  position: absolute;
+  bottom: 4.5rem;
+  width: 200px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  z-index: 1;
+}
+
+.promo:hover {
+  color: white;
+}
+
+.amortización {
+  z-index: 1000;
 }
 
 @media (max-width: 600px) {
