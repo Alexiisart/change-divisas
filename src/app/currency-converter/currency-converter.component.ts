@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CurrencyService } from '../services/currency.service';
-import { ModalCommingSoonComponent } from '../components/modal-comming-soon/modal-comming-soon.component';
-
+import { RouterModule } from '@angular/router';
+import { NumberFormatDirective } from '../directives/number-format.directive';
 @Component({
   selector: 'app-currency-converter',
   standalone: true,
-  imports: [CommonModule, FormsModule, ModalCommingSoonComponent],
+  imports: [CommonModule, FormsModule, RouterModule, NumberFormatDirective],
   templateUrl: './currency-converter.component.html',
   styleUrls: ['./currency-converter.component.css'],
 })
@@ -18,7 +18,6 @@ export class CurrencyConverterComponent implements OnInit {
   result: number = 0;
   rates: { [key: string]: number } = {};
   currencies: string[] = [];
-  showModal = false;
 
   constructor(private currencyService: CurrencyService) {}
 
@@ -48,14 +47,5 @@ export class CurrencyConverterComponent implements OnInit {
   clear() {
     this.amount = '';
     this.result = 0;
-  }
-
-  calculateLoan() {
-    // Implementar lógica del préstamo aquí
-    console.log('Calculando préstamo...');
-  }
-
-  closeModal() {
-    this.showModal = false;
   }
 }

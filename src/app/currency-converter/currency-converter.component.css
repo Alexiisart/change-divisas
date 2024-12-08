@@ -92,11 +92,6 @@ select {
   font-size: 0.9rem;
 }
 
-.input-wrapper {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
 .result {
   width: 350px;
   background-color: white;
@@ -104,31 +99,4 @@ select {
   padding: 0.75rem;
   border-radius: 6px;
   margin-bottom: 1rem;
-}
-
-.calculate-loan {
-  color: #488798;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-footer {
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  gap: 0.5rem;
-  background-color: #afc5d1;
-  width: 100%;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.powered-by {
-  color: #24505c;
-}
-
-.button-container {
-  width: 350px;
-  display: flex;
-  flex-direction: column;
 }

@@ -82,6 +82,11 @@ body {
   color: #afc5d1;
 }
 
+.input-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
 .input-icon {
   position: absolute;
   top: 50%;
@@ -104,4 +109,34 @@ h2 {
 h3 {
   color: #afc5d1;
   font-size: 16px;
+}
+
+footer {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  gap: 0.5rem;
+  background-color: #afc5d1;
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.powered-by {
+  color: #24505c;
+}
+
+.button-container {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calculate-loan {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.calculate-loan:hover {
+  color: white;
 }

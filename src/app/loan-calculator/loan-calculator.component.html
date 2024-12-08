@@ -1,0 +1,88 @@
+<div class="converter-container">
+  <div class="header">
+    <div class="logo-container">
+      <img src="/assets/angular.svg" alt="angular" class="angular-logo" />
+      <img src="/assets/logo.svg" alt="logo" class="logo" />
+    </div>
+  </div>
+
+  <div class="app-container">
+    <div class="sub-logo-container">
+      <img src="/assets/sub-logo.svg" class="sub-logo" alt="" />
+      <h1>Calculadora de Préstamos</h1>
+    </div>
+
+    <div class="input-wrapper">
+      <span class="input-icon">$</span>
+      <input
+        type="text"
+        [(ngModel)]="amount"
+        class="input-1"
+        placeholder=" "
+        id="amount"
+        numberFormat
+      />
+      <label for="amount" class="floating-label">Monto del préstamo</label>
+    </div>
+
+    <div class="input-wrapper">
+      <span class="input-icon">T</span>
+      <input
+        type="text"
+        [(ngModel)]="years"
+        class="input-1"
+        placeholder=" "
+        id="years"
+      />
+      <label for="years" class="floating-label">Plazo en años</label>
+    </div>
+
+    <div class="input-wrapper">
+      <span class="input-icon">%</span>
+      <input
+        type="text"
+        [(ngModel)]="annualRate"
+        class="input-1"
+        placeholder=" "
+        id="rate"
+        maxlength="3"
+      />
+      <label for="rate" class="floating-label">Tasa de interés anual</label>
+    </div>
+
+    <div class="button-container">
+      <button (click)="calculate()" class="button-1">Calcular</button>
+      <button (click)="clear()" class="button-2">Limpiar</button>
+      <div class="calculate-loan" routerLink="/currency-converter">
+        Cambio de divisas
+      </div>
+    </div>
+    <div class="calculate-loan" (click)="showModal = true">
+      ¿Quieres saber cómo pagar tu préstamo más rápido?👌
+    </div>
+
+    @if (amortizationTable.length > 0) {
+    <button (click)="showAmortizationTable()" class="button-1">
+      Ver tabla de amortización
+    </button>
+    } @if (isModalVisible) {
+    <app-amortization-table-modal
+      [amortizationTable]="amortizationTable"
+      (closeModal)="closeModal()"
+      (downloadPDF)="downloadPDF()"
+      (downloadExcel)="downloadExcel()"
+    >
+    </app-amortization-table-modal>
+    }
+  </div>
+
+  @if (showModal) {
+  <app-modal-comming-soon (closeModal)="closeModalPress()">
+  </app-modal-comming-soon>
+  }
+
+  <footer>
+    <div class="powered-by">powered by</div>
+    <img src="/assets/x.svg" class="powered-by-logo" alt="" />
+  </footer>
+</div>

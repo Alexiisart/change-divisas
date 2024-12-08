@@ -40,11 +40,12 @@
     <div class="input-wrapper">
       <span class="input-icon">{{ fromCurrency }}</span>
       <input
-        type="number"
+        type="text"
         [(ngModel)]="amount"
         placeholder=" "
         id="amount"
         class="input-1"
+        numberFormat
       />
       <label for="amount" class="floating-label">Ingresa el monto</label>
     </div>
@@ -59,19 +60,14 @@
 
       <button (click)="clear()" class="button-2">Limpiar</button>
 
-      <div class="calculate-loan" (click)="showModal = true">
-        Calcular prestamo
-      </div>
+      <div class="calculate-loan" routerLink="/">Calcular prestamo</div>
     </div>
   </div>
+
+  
 
   <footer>
     <div class="powered-by">powered by</div>
     <img src="/assets/x.svg" class="powered-by-logo" alt="" />
   </footer>
-
-  <app-modal-comming-soon
-    *ngIf="showModal"
-    (closeModal)="closeModal()"
-  ></app-modal-comming-soon>
 </div>
