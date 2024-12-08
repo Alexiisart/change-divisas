@@ -21,15 +21,15 @@ export class NumberFormatDirective {
       value = parts.join('.');
     }
 
-    // Convertir a número para el modelo
-    const numericValue = parseFloat(value) || 0;
+    // Convertir a número para el modelo o null si está vacío
+    const numericValue = value === '' ? null : parseFloat(value);
 
     // Actualizar el modelo con el valor numérico
     if (this.control.control) {
       this.control.control.setValue(numericValue, { emitEvent: false });
     }
 
-    // Formatear para la visualización
+    // Formatear para la visualización solo si hay valor
     if (value) {
       if (parts[0].length > 3) {
         parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
