@@ -1,0 +1,33 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #0e262d;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 90%;
+  width: 400px;
+  border: 2px solid #afc5d1;
+}
+
+h2 {
+  color: #afc5d1;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #afc5d1;
+  margin-bottom: 1.5rem;
+}

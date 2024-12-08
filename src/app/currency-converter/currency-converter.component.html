@@ -1,0 +1,77 @@
+<div class="converter-container">
+  <div class="header">
+    <div class="logo-container">
+      <img src="/assets/angular.svg" alt="angular" class="angular-logo" />
+      <img src="/assets/logo.svg" alt="logo" class="logo" />
+    </div>
+  </div>
+
+  <div class="app-container">
+    <div class="sub-logo-container">
+      <img src="/assets/sub-logo.svg" class="sub-logo" alt="" />
+      <h1>Cambio de divisas</h1>
+    </div>
+    <div class="converter-form">
+      <div class="currency-selectors">
+        <div class="select-wrapper">
+          <select [(ngModel)]="fromCurrency">
+            @for (currency of currencies; track $index) {
+            <option [value]="currency">{{ currency }}</option>
+            }
+          </select>
+          <span class="select-arrow">
+            <img src="/assets/arrow.svg" alt="" />
+          </span>
+        </div>
+        <span class="divider">A</span>
+        <div class="select-wrapper">
+          <select [(ngModel)]="toCurrency">
+            @for (currency of currencies; track $index) {
+            <option [value]="currency">{{ currency }}</option>
+            }
+          </select>
+          <span class="select-arrow">
+            <img src="/assets/arrow.svg" alt="" />
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-wrapper">
+      <span class="input-icon">{{ fromCurrency }}</span>
+      <input
+        type="number"
+        [(ngModel)]="amount"
+        placeholder=" "
+        id="amount"
+        class="input-1"
+      />
+      <label for="amount" class="floating-label">Ingresa el monto</label>
+    </div>
+
+    <div class="result">
+      {{ toCurrency }}
+      {{ result | number : "1.2-2" }}
+    </div>
+
+    <div class="button-container">
+      <button (click)="calculate()" class="button-1">Calcular</button>
+
+      <button (click)="clear()" class="button-2">Limpiar</button>
+
+      <div class="calculate-loan" (click)="showModal = true">
+        Calcular prestamo
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="powered-by">powered by</div>
+    <img src="/assets/x.svg" class="powered-by-logo" alt="" />
+  </footer>
+
+  <app-modal-comming-soon
+    *ngIf="showModal"
+    (closeModal)="closeModal()"
+  ></app-modal-comming-soon>
+</div>
